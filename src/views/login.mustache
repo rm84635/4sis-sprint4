@@ -1,0 +1,26 @@
+{{> head }}
+
+<main>
+  <div id="login-content">
+    <header>
+      <img src="/static/img/logo.jpeg" height="70" />
+      <h1>Faça Login</h1>
+      <h3>E aproveite as oportunidades</h3>
+    </header>
+
+    <section id="login-form-section">
+      <form method="POST" action="/login">
+        <input type="text" placeholder="E-mail">
+        <input type="password" placeholder="Senha">
+
+        <input type="submit" value="Login" />
+      </form>
+
+      <small>Não tem cadastro? Clique <a href="#">aqui</a>.</small>
+    </section>
+  </div>
+
+  <div id="login-banner"></div>
+</main>
+
+{{> foot }}

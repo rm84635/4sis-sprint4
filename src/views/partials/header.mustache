@@ -1,0 +1,24 @@
+<header>
+  <div id="logo">
+    <img src="/static/img/logo.jpeg" height="40">
+  </div>
+
+  <nav id="main-menu">
+    <ul>
+      <li><a href="/">Início</a></li>
+      <li><a href="#">Oportunidades</a></li>
+    </ul>
+  </nav>
+
+  <div id="user">
+      {{# userLogged }}
+        <div id="my-profile-link">
+          <a href="/perfil">{{ userName }}</a>
+        </div>
+      {{/ userLogged }}
+
+      {{^ userLogged }}
+        <a class="btn" href="/login">Login</a>
+      {{/ userLogged }}
+  </div>
+</header>

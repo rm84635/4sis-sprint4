@@ -1,0 +1,55 @@
+header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+
+  padding: 20px;
+}
+
+header #logo {
+  width: 100%;
+  align-content: start;
+}
+
+header #my-profile-link {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+header #main-menu {
+  width: 100%;
+  background: #fff;
+  border-radius: 30px;
+  padding: 15px;
+  -webkit-box-shadow: 5px 5px 45px 0px rgba(219,219,219,1);
+  -moz-box-shadow: 5px 5px 45px 0px rgba(219,219,219,1);
+  box-shadow: 5px 5px 45px 0px rgba(219,219,219,1);
+}
+
+header #main-menu ul {
+  list-style-type: none;
+}
+
+header #main-menu ul li {
+  display: inline;
+  margin-left: 20px;
+}
+
+header #main-menu ul li a {
+  color: rgba(76,187,134,1);
+  font-size: 1.1em;
+  text-decoration: none;
+
+  transition: all .5s ease-in-out;
+}
+
+header #main-menu ul li a:hover {
+  color: rgba(57,157,193,1);
+  text-decoration: underline;
+}
+
+header #user {
+  display: grid;
+  width: 100%;
+  justify-content: end;
+  align-content: start;
+}

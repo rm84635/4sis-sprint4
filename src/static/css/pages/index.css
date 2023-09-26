@@ -1,0 +1,100 @@
+#presentation {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+}
+
+#presentation #presentation-text {
+  width: 100%;
+  padding: 30px;
+  background: rgba(76,187,134,1);
+  color: #fff;
+  text-align: center;
+}
+
+#presentation #presentation-text h1 {
+  font-size: 3em;
+}
+
+#presentation #presentation-text #presentation-text-content {
+  width: 60%;
+}
+
+#presentation #presentation-text #presentation-text-content p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+#presentation #presentation-banner {
+  width: 100%;
+  background-image: url('/static/img/index-presentation.jpg');
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#connections {
+  width: 100%;
+  background-color: rgb(25, 72, 88);
+  color: #fff;
+  text-align: center;
+}
+
+#connections h2 {
+  padding: 50px;
+  font-size: 2.5em;
+}
+
+#connections #connections-text-content {
+  width: 40%;
+  margin-bottom: 40px;
+}
+
+#connections #connections-text-content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+#testimonies {
+  width: 100%;
+  text-align: center;
+
+  background-image: rgb(76,187,134);
+  background-image: -moz-linear-gradient(144deg, rgba(76,187,134,1) 0%, rgba(57,157,193,1) 84%);
+  background-image: -webkit-linear-gradient(144deg, rgba(76,187,134,1) 0%, rgba(57,157,193,1) 84%);
+  background-image: linear-gradient(144deg, rgba(76,187,134,1) 0%, rgba(57,157,193,1) 84%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4cbb86",endColorstr="#399dc1",GradientType=1);
+
+  color: #fff;
+  padding: 50px;
+}
+
+#testimonies h2 {
+  margin-bottom: 50px;
+  font-size: 2.5em;
+}
+
+#testimonies .testimony-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background: #fefefe;
+  padding: 20px;
+  border-radius: 10px;
+  color: #111;
+  width: 50%;
+  -webkit-box-shadow: 5px 5px 45px 0px rgb(68, 68, 68);
+  -moz-box-shadow: 5px 5px 45px 0px rgb(68, 68, 68);
+  box-shadow: 5px 5px 45px 0px rgb(68, 68, 68);
+}
+
+#testimonies .testimony-card .testimony-card-picture img {
+  border-radius: 50%;
+}
+
+#testimonies .testimony-card .testimony-card-text {
+  font-size: 1.1em;
+  line-height: 1.5;
+  text-align: justify;
+  width: 85%;
+}
