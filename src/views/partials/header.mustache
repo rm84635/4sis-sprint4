@@ -6,14 +6,14 @@
   <nav id="main-menu">
     <ul>
       <li><a href="/">Início</a></li>
-      <li><a href="#">Oportunidades</a></li>
+      <li><a href="/oportunidades">Oportunidades</a></li>
     </ul>
   </nav>
 
   <div id="user">
       {{# userLogged }}
         <div id="my-profile-link">
-          <a href="/perfil">{{ userName }}</a>
+          <a href="/perfil">{{ userName }}</a> | <a href="/logout">Sair</a>
         </div>
       {{/ userLogged }}
 

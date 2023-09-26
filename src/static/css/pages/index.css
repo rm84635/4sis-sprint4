@@ -15,6 +15,7 @@
 
 #presentation #presentation-text h1 {
   font-size: 3em;
+  text-shadow: 0px 0px 3px rgba(0,0,0,0.2);
 }
 
 #presentation #presentation-text #presentation-text-content {
@@ -44,6 +45,7 @@
 #connections h2 {
   padding: 50px;
   font-size: 2.5em;
+  text-shadow: 0px 0px 3px rgba(0,0,0,0.2);
 }
 
 #connections #connections-text-content {
@@ -73,6 +75,7 @@
 #testimonies h2 {
   margin-bottom: 50px;
   font-size: 2.5em;
+  text-shadow: 0px 0px 3px rgba(0,0,0,0.2);
 }
 
 #testimonies .testimony-card {

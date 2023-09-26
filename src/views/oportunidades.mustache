@@ -1,0 +1,26 @@
+{{> head }}
+
+<section id="oportunidades-heading">
+  <h1>Escolha a sua oportunidade.</h1>
+
+  <h3>
+    Estamos criando uma maneira melhor de trabalhar juntos, com confiança e <br/>
+    respeito, para uma mudança positiva no mundo.
+  </h3>
+</section>
+
+<section id="oportunidades-list">
+  <h2>Vagas abertas</h2>
+
+  <div id="opotunidades-list-main">
+    {{# oportunidades }}
+      <div class="opotunidades-list-oportunidade-card">
+        <h3>{{ job }}</h3>
+        <i>{{ company }}</i><br/><br/>
+        <p>{{ description }}</p>
+      </div>
+    {{/ oportunidades }}
+  </div>
+</section>
+
+{{> foot }}
