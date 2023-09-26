@@ -77,3 +77,22 @@ main > h1 {
 #my-profile-progress .experience-card-left-dates {
   display: block;
 }
+
+#my-profile-applications {
+  margin-bottom: 60px;
+}
+
+#my-profile-applications h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  margin-top: 70px;
+}
+
+.my-profile-applications-application {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.my-profile-applications-application ul {
+  list-style-type: none;
+}

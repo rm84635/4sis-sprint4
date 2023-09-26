@@ -39,6 +39,23 @@
       </div>
     {{/ user.experiences }}
   </section>
+
+  <section id="my-profile-applications">
+    <h2>Minhas candidaturas</h2>
+
+    {{# user.applications }}
+      <div class="my-profile-applications-application">
+        <i>{{ company }}</i><br/><br/>
+        <b>{{ job }}</b><br/><br/>
+        
+        <ul>
+          {{# progress }}
+            <li>{{ . }}</li>
+          {{/ progress }}
+        </ul>
+      </div>
+    {{/ user.applications }}
+  </section>
 </main>
 
 {{> foot }}
