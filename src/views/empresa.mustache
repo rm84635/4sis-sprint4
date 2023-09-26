@@ -1,0 +1,42 @@
+{{> head }}
+
+<main>
+  <h1>Perfil da empresa</h1>
+
+  <section id="my-profile-presentation">
+    <div id="my-profile-presentation-picture">
+      <img src="{{ company.avatar }}"/>
+    </div>
+
+    <div id="my-profile-presentation-text">
+      <h2>{{ company.name }}</h2>
+
+      <div id="my-profile-presentation-text-bio">
+        <p>{{ company.bio }}</p><br/>
+        <p><b>Vagas cadastradas:</b> {{ company.vagasCadastradas }}</p>
+        <p><b>Total de candidatos:</b> {{ numeroTotalDeCandidatos }}</p>
+        <p><b>Vagas finalizadas:</b> {{ company.vagasFinalizadas }}</p>
+      </div>
+
+      <h3>Contato:</h3>
+
+      <ul>
+        <li><b>E-mail:</b> {{ company.contact.email }}</li>
+        <li><b>Telefone:</b> {{ company.contact.tel }}</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="my-profile-applications">
+    <h2>Vagas abertas</h2>
+
+    {{# company.jobs }}
+      <div class="my-profile-applications-application">
+        <b>{{ job }}</b><br/><br/>
+        <p>{{ description }}</p>
+      </div>
+    {{/ company.jobs }}
+  </section>
+</main>
+
+{{> foot }}

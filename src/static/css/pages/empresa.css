@@ -1,0 +1,101 @@
+main {
+  width: 70%;
+}
+
+main > h1 {
+  font-size: 3em;
+  margin-bottom: 100px;
+}
+
+
+#my-profile-presentation {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ccc;
+}
+
+#my-profile-presentation-picture img {
+  width: 80%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 50px -22px rgb(27, 27, 27);
+  -moz-box-shadow: 0px 0px 50px -22px rgb(27, 27, 27);
+  box-shadow: 0px 0px 50px -22px rgb(27, 27, 27);
+}
+
+#my-profile-presentation-text {
+  padding: 20px;
+}
+
+#my-profile-presentation-text h2 {
+  font-size: 2.1em;
+  margin-bottom: 20px;
+}
+
+#my-profile-presentation-text h3 {
+  font-size: 1.4em;
+  margin-top: 20px;
+}
+
+#my-profile-presentation-text ul {
+  list-style-type: none;
+  margin-top: 20px;
+}
+
+#my-profile-presentation-text-bio {
+  width: 70%;
+  margin-left: 0;
+  line-height: 1.5;
+}
+
+#my-profile-progress {
+  margin-top: 50px;
+}
+
+#my-profile-progress h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+#my-profile-progress .experience-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+#my-profile-progress .experience-card-left {
+  margin-left: 0;
+  padding: 30px;
+}
+
+#my-profile-progress .experience-card-right {
+  margin-left: 0;
+  padding: 30px;
+  border-left: 1px solid #ccc;
+}
+
+#my-profile-progress .experience-card-left-name {
+  display: block;
+}
+
+#my-profile-progress .experience-card-left-dates {
+  display: block;
+}
+
+#my-profile-applications {
+  margin-bottom: 60px;
+}
+
+#my-profile-applications h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  margin-top: 70px;
+}
+
+.my-profile-applications-application {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.my-profile-applications-application ul {
+  list-style-type: none;
+}

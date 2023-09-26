@@ -8,6 +8,7 @@ const PORT = 3000;
 const VIEWS_PATH = `${__dirname}/views`;
 
 let userLogged = false;
+let isUserCompany = false;
 
 let fakeUser = {
   firstName: 'Pedro',
@@ -34,22 +35,52 @@ let fakeUser = {
   ],
   applications: [
     {
-      company: 'Google',
-      job: 'Desenvolvedor Flutter',
+      company: 'FIAP',
+      job: 'DevOps e Infra',
       progress: [
-        '11/05 - Candidatura enviada',
-        '12/05 - Currículo selecionado',
-        '15/05 - Entrevista com o gestor'
+        '11/09 - Candidatura enviada',
+        '12/09 - Currículo selecionado',
+        '15/09 - Entrevista com o gestor'
+      ]
+    },
+    {
+      company: 'FIAP',
+      job: 'Desenvolvedor mobile',
+      progress: [
+        '12/09 - Candidatura enviada',
+        '14/09 - Currículo selecionado',
+        '18/09 - Entrevista com o gestor'
       ]
     },
     {
       company: 'Apple',
-      job: 'Desenvolvedor iOS',
+      job: 'Desenvolvedor iOS mobile',
       progress: [
-        '12/05 - Candidatura enviada',
-        '14/05 - Currículo selecionado',
-        '18/05 - Entrevista com o gestor'
+        '26/09 - Candidatura enviada'
       ]
+    }
+  ]
+};
+
+let fakeCompany = {
+  name: 'Faculdade de Informática e Administração Paulista (FIAP)',
+  bio: 'A melhor faculdade de tecnologia: uma história que vem sendo construída estimulando mentes a vivenciarem a inovação e o empreendedorismo.',
+  avatar: '/static/img/my-profile-company-avatar.png',
+  contact: {
+    email: 'empower@fiap.com.br',
+    tel: '+55 11 3385-8010'
+  },
+  vagasCadastradas: 2,
+  numeroTotalDeCandidatos: 1,
+  vagasFinalizadas: 0,
+  jobs: [
+    {
+      job: 'DevOps e Infra',
+      description: 'Precisamos de profissionais especializados em DevOps e infraestrutura de sistemas.'
+    },
+    {
+      job: 'Desenvolvedor mobile',
+      description: 'Procuramos desenvolvedores talentosos focados em Kotlin e Flutter.'
     }
   ]
 };
@@ -111,6 +142,11 @@ const renderPage = (pageName, pageTitle, res, obj) => {
   if (userLogged) {
     obj.userName = 'Pedro da Silva';
     obj.user = fakeUser;
+
+    if (isUserCompany) {
+      obj.userName = 'FIAP';
+      obj.user = fakeCompany;
+    }
   }
 
   obj.pageCSS = `/static/css/pages/${pageName}.css`;
@@ -140,13 +176,23 @@ app.get('/login', (_, res) => {
   });
 });
 
-app.post('/login', (_, res) => {
-  userLogged = true;
-  res.redirect('/perfil');
+app.post('/login', (req, res) => {
+  if (req.body.email == 'empower@fiap.com.br') {
+    userLogged = true;
+    isUserCompany = true;
+    res.redirect('/empresa')
+  } else if (req.body.email == 'pedrodasilva@gmail.com') {
+    userLogged = true;
+    isUserCompany = false;
+    res.redirect('/perfil');
+  } else {
+    res.redirect('/login');
+  }
 });
 
 app.get('/logout', (_, res) => {
   userLogged = false;
+  isUserCompany = false;
   res.redirect('/');
 });
 
@@ -164,6 +210,30 @@ app.get('/perfil', (_, res) => {
   } else {
     res.redirect('/');
   }
+});
+
+app.get('/empresa', (_, res) => {
+  if (userLogged && isUserCompany) {
+    renderPage('empresa', 'Empresa', res, {company: fakeCompany});
+  } else {
+    res.redirect('/');
+  }
+});
+
+app.get('/me', (_, res) => {
+  if (userLogged) {
+    if (isUserCompany) {
+      res.redirect('/empresa');
+    } else {
+      res.redirect('/perfil');
+    }
+  } else {
+    res.redirect('/login');
+  }
+});
+
+app.get('/empresa/1', (_, res) => {
+  renderPage('empresa', 'Empresa', res, {company: fakeCompany});
 });
 
 app.get('/oportunidades', (_, res) => {
